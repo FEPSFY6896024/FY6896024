@@ -24,8 +24,12 @@
   <tr><h1>Table of Contents</h1></tr>
   <tr><h4><a href="#abstract">Abstract</h4></tr>
   <tr><h4><a href="#introduction">Introduction</h4></tr>
-  <tr><h4><a href="#analysis">Analysis and discussion</h4></tr>
-  <tr><h4><a href="#references">References</h4></tr>
+  <tr><h4><a href="#lyricalgeneration">Lyrical Generation</h4></tr>
+  <tr><h4><a href="#vocalgeneration">Vocal Generation</h4></tr>
+  <tr><h4><a href="#musicgenerating"> Generating the Music itself </h4></tr>
+  <tr><h4><a href="#legal"> Legality of AI generated music </h4></tr>
+  <tr><h4><a href="#conclusion"> Conclusion </h4></tr>
+  <tr><h4><a href="#references"> References </h4></tr>
 </table>
  <h2 id="Abstract"><b>Abstract</b></h2>
   <p>
@@ -38,23 +42,23 @@
 The current and most popular AI music generators on the market are Soundraw, Soundful, Suno.ai and Mubert . Like in Figure 1, these AI’s generate music from a text input from the user, where the user describes the genre, lyrical theme and tempo of the song they desire.  Generating a song requires 3 main components, Lyrical Generation, Vocal Generation and generating the soundtrack itself, which Suno manages to do all in one go. But let’s look at each process in detail.
 
   </p>
-    <h3 id="Lyrical Generation"><b>Lyrical Generation</b></h3>
+    <h3 id="lyricalgeneration"><b>Lyrical Generation</b></h3>
   <p>
    Most of these AIs use their own custom built versions of Chat GPT. GPT is a Generative Pretrained Transformer model (Harry Guinness, 2024), which is a language model trained across the large database of the internet, and any other publicly available datasets or pieces of information. After analyzing several lyrics from the internet, Chat GPT would consider the grammar, semantics, context, style and genre and generate lyrics that would then be inputted into the Speech/Audio Generator.
 First, the user’s sentence/prompt is broken down into smaller chunks called ‘tokens’, which are chunks of text encoded as a vector as in Figure 2. ChatGPT uses a transformer model to read every word in the sentence at once, and compares each word/token to the other by giving each word an “attention score” from 0 to 1.  Words with a similar attention score, typically correlate in some way. Attention mechanisms help the model focus on certain words and understand the holistic subject of the sentence, for example it would be able to understand the meaning of the word “bank” based off of the surrounding text, either like a ‘river bank’ or a ‘financial bank’. Once a full set of lyrics is generated, the model outputs the final sequence of tokens as text, which could then be passed onto a Speech/Vocal Generator to turn the text into audio.
   </p>
   <br>
-      <h3 id="Vocal Generation"><b>Vocal Generation</b></h3>
+      <h3 id="vocalgeneration"><b>Vocal Generation</b></h3>
   <p>
   Once the lyrics of the song are generated through a Large Language Model or similar, AI voice cloning is used to replicate the vocals of a chosen artist and a text-to-speech model would be used to bring those lyrics to life. AI Vocal generators use models similar to that of one called Tacotron 2 - a Text-to-Speech model that converts text into natural sounding speech, to generate vocals from a text input, so let’s break down how Tacotron 2 works (Stephen William, 2021).
   </p>
   <br>
-      <h3 id="Generating the Music itself"><b>Generating the Music itself</b></h3>
+      <h3 id="musicgenerating"><b>Generating the Music itself</b></h3>
   <p>
 There are many platforms such as Mureka.ai and Suno.ai that can be used to generate songs from scratch, given some prompts on genre, topic, tempo and lyrics from the user. But how exactly do these platforms generate the soundtrack ? Just like in generating the AI vocal and lyrics, music generating AIs start by scraping their data from publicly available datasets and online repositories and user contributed data. This includes audio files, MIDI files and ABC Notation. An example of such datasets is ‘MusicCaps’ which is a dataset containing 5,521 music samples of which is labeled with an English aspect list and a free text caption written by musicians. The instrument choice, tempo, meter and key are provided by the user. WaveNet uses convolutional neural networks  to make predictions influenced by all previously seen observations of the waveforms it has analysed and generates new waveforms that are iterations of the previous (Rachel Chen, 2017). 
   </p>
   <br>
-     <h3 id="Legality of AI generated music"><b>Legality of AI generated music</b></h3>
+     <h3 id="legal"><b>Legality of AI generated music</b></h3>
   <p>
 Copyright law actually doesn’t directly protect a singer's voice, but rather the Right of Publicity which is the right to control the commercial use of their name, likeness, or voice. This means that the artist has the right to claim royalties on the song and even have it taken down (The IP Press, 2024).
   </p>
@@ -64,7 +68,7 @@ Copyright law actually doesn’t directly protect a singer's voice, but rather t
      We’re still a long way away from fully replacing singers and musicians. A lot of these models create music that sounds generated, and lacking human feel, but as the internet grows, AI models will acquire more data to train on and become better.
      </p>
     <br>
-    <h2 id="Referrences"><b>Referrences</b></h2>
+    <h2 id="references"><b>Referrences</b></h2>
    <ul>
     <li> Harry , G (2024) <a href="https://zapier.com/blog/how-does-chatgpt-work/"> How does ChatGPT work? </a></li>
     <li> Stephen, W (2021) <a href="https://medium.com/@swilliam.productions/text-to-speech-with-tacotron-2-573986c42124">Text To Speech With Tacotron 2:, Medium.com</a></li>

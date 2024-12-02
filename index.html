@@ -62,18 +62,18 @@
 
 The current and most popular AI music generators on the market are Soundraw, Soundful, Suno.ai and Mubert . Like in Figure 1, these AI’s generate music from a text input from the user, where the user describes the genre, lyrical theme and tempo of the song they desire.  Generating a song requires 3 main components, Lyrical Generation, Vocal Generation and generating the soundtrack itself, which Suno manages to do all in one go. But let’s look at each process in detail
   </p>
-  <img src"figure1.png"  alt="Figure 1" style="width: 500px; height: 100px;"> 
+   <img src"figure1.png"  alt="Figure 1" style="width: 500px; height: 100px;"> 
     <h3 id="lyricalgeneration"><b>Lyrical Generation</b></h3>
   <p>
    Most of these AIs use their own custom built versions of Chat GPT. GPT is a Generative Pretrained Transformer model (Harry Guinness, 2024), which is a language model trained across the large database of the internet, and any other publicly available datasets or pieces of information. After analyzing several lyrics from the internet, Chat GPT would consider the grammar, semantics, context, style and genre and generate lyrics that would then be inputted into the Speech/Audio Generator.
 First, the user’s sentence/prompt is broken down into smaller chunks called ‘tokens’, which are chunks of text encoded as a vector as in Figure 2. ChatGPT uses a transformer model to read every word in the sentence at once, and compares each word/token to the other by giving each word an “attention score” from 0 to 1.  Words with a similar attention score, typically correlate in some way. Attention mechanisms help the model focus on certain words and understand the holistic subject of the sentence, for example it would be able to understand the meaning of the word “bank” based off of the surrounding text, either like a ‘river bank’ or a ‘financial bank’. Once a full set of lyrics is generated, the model outputs the final sequence of tokens as text, which could then be passed onto a Speech/Vocal Generator to turn the text into audio.
   </p>
+   <img src="figure2.png"  alt="Figure 2" style="width: 500px; height: 100px;" >
   <br>
       <h3 id="vocalgeneration"><b>Vocal Generation</b></h3>
   <p>
   Once the lyrics of the song are generated through a Large Language Model or similar, AI voice cloning is used to replicate the vocals of a chosen artist and a text-to-speech model would be used to bring those lyrics to life. AI Vocal generators use models similar to that of one called Tacotron 2 - a Text-to-Speech model that converts text into natural sounding speech, to generate vocals from a text input, so let’s break down how Tacotron 2 works (Stephen William, 2021).
   </p>
-    <img src="figure2.png"  alt="Figure 2" style="width: 500px; height: 100px;" >
   <br>
       <h3 id="musicgenerating"><b>Generating the Music itself</b></h3>
   <p>

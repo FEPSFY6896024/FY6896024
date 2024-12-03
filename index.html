@@ -115,7 +115,20 @@ First, the user’s sentence/prompt is broken down into smaller chunks called �
   <br>
       <h3 id="vocalgeneration"><b>Vocal Generation</b></h3>
   <p>
-  Once the lyrics of the song are generated through a Large Language Model or similar, AI voice cloning is used to replicate the vocals of a chosen artist and a text-to-speech model would be used to bring those lyrics to life. AI Vocal generators use models similar to that of one called Tacotron 2 - a Text-to-Speech model that converts text into natural sounding speech, to generate vocals from a text input, so let’s break down how Tacotron 2 works (Stephen William, 2021).
+  Once the lyrics of the song are generated through a Large Language Model or similar, AI voice cloning is used to replicate the vocals of a chosen artist and a text-to-speech model would be used to bring those lyrics to life. AI Vocal generators use models similar to that of one called Tacotron 2 - a Text-to-Speech model that converts text into natural sounding speech, to generate vocals from a text input, so let’s break down how Tacotron 2 works. 
+   <br> 
+   <ol class="numbered-list">
+  <li><b>Text Processing - </b>Firstly, the text undergoes several stages of preprocessing to ensure that it is in a format that the model can actually handle. Tacotron cleans up the lyrical text input, removing any punctuation marks, turning number inputs like “123” into “one two three” and abbreviations like “Dr.” to “Doctor”.</li>
+  <li><b>Grapheme-to-Phoneme (G2P) Conversion - </b> 
+Text is usually written in “Graphemes” which are letters or characters like “cat”, “dog” and etc as seen in Figure 4. Speech is made up of “Phonemes”, which are the smallest units of sound in speech and are written as “/k/, /æ/, /t/”. Tacotron would then use a ‘Grapheme-to-Phoneme’ model to convert the words into their phonetic representation like this "cat" → /k/, /æ/, /t/.
+</li>
+  <li><b>Encoding the text - </b>The phonemes would then be passed through an encoder which turns them into a list of numbers (vector) that summarises their tone, stress and rhythm.
+</li>
+    <li><b>Mel-Spectrogram Generation - </b> This vector would then be put into a decoder which generates a spectrogram (frequency:time graph) from the vector.
+</li>
+    <li><b>Waveform Synthesis - </b> The Mel Spectrogram would be passed down to a Vocoder like WaveNet, which would analyse the spectrogram and reconstruct it into actual audio. WaveNet is a machine learning model that learns from hours of audio data, and it would ‘predict’ how the text would sound based on the data it has analysed and the spectrogram. </li>
+</ol>
+
   </p>
   <br>
       <h3 id="musicgenerating"><b>Generating the Music itself</b></h3>

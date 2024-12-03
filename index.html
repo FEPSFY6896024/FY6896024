@@ -65,7 +65,7 @@ h4 {
   text-decoration: none;
 }
  </style>
-  <table id="customers" align="center">
+  <table id="customers" align="center"; >
       <tr>
         <th colspan="2">
           <h1>Table of Contents</h1>
@@ -96,7 +96,7 @@ h4 {
         <td><a href="#references">References</a></td>
       </tr>
     </table>
-<h1 id="main-title" align="center"><b>How AI is implemented to create commercial music from Scratch</b></h1>
+<h1 id="main-title" align="center"; ><b>How AI is implemented to create commercial music from Scratch</b></h1>
  <h2 id="Abstract"><b>Abstract</b></h2>
   <p>
    This page explores the role of generative AI in music creation focusing on key components such as Lyric Generation, vocal synthesis and audio/wave synthesis. We explore how chat GPT works to generate lyrical content and how technologies like Tacotron 2 and WaveNet are used to generate vocals and audio through waveform synthesis. We will also explore the legality of using this technology for commercial music purposes and whether this violates copyright laws or the right of publicity. 
@@ -105,13 +105,13 @@ h4 {
   <p class="ex1">
     Since the release of Chat GPT by open AI in 2022, artificial intelligence has been the hottest topic when it comes to technology, and has been rapidly implemented into several different industries, an example of which - the music industry. From generating fully recorded, mixed and mastered songs of any genre, to replicating the vocals of reputable artists, let's break down exactly how generative AI is used to create music, and explore the potential uses and legal concerns of this technology. The current and most popular AI music generators on the market are Soundraw, Soundful, Suno.ai and Mubert . Like in Figure 1, these AI’s generate music from a text input from the user, where the user describes the genre, lyrical theme and tempo of the song they desire.  Generating a song requires 3 main components, Lyrical Generation, Vocal Generation and generating the soundtrack itself, which Suno manages to do all in one go. But let’s look at each process in detail
   </p>
-   <img src="fig1.png"  alt="Figure 1" style="width: 1000px; height: 200px; align="center"> 
+   <img src="fig1.png"  alt="Figure 1" style="width: 1000px; height: 200px; align="center";> 
     <h3 id="lyricalgeneration"><b>Lyrical Generation</b></h3>
   <p>
    Most of these AIs use their own custom built versions of Chat GPT. GPT is a Generative Pretrained Transformer model (Harry Guinness, 2024), which is a language model trained across the large database of the internet, and any other publicly available datasets or pieces of information. After analyzing several lyrics from the internet, Chat GPT would consider the grammar, semantics, context, style and genre and generate lyrics that would then be inputted into the Speech/Audio Generator.
 First, the user’s sentence/prompt is broken down into smaller chunks called ‘tokens’, which are chunks of text encoded as a vector as in Figure 2. ChatGPT uses a transformer model to read every word in the sentence at once, and compares each word/token to the other by giving each word an “attention score” from 0 to 1.  Words with a similar attention score, typically correlate in some way. Attention mechanisms help the model focus on certain words and understand the holistic subject of the sentence, for example it would be able to understand the meaning of the word “bank” based off of the surrounding text, either like a ‘river bank’ or a ‘financial bank’. Once a full set of lyrics is generated, the model outputs the final sequence of tokens as text, which could then be passed onto a Speech/Vocal Generator to turn the text into audio.
   </p>
-   <img src="fig2.png" alt="Figure 2" style="width: 350px; height: 250px; align="right" >
+   <img src="fig2.png" alt="Figure 2" style="width: 350px; height: 250px; align="right"; >
   <br>
       <h3 id="vocalgeneration"><b>Vocal Generation</b></h3>
   <p>

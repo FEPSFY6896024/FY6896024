@@ -111,7 +111,7 @@ h4 {
    Most of these AIs use their own custom built versions of Chat GPT. GPT is a Generative Pretrained Transformer model (Harry Guinness, 2024), which is a language model trained across the large database of the internet, and any other publicly available datasets or pieces of information. After analyzing several lyrics from the internet, Chat GPT would consider the grammar, semantics, context, style and genre and generate lyrics that would then be inputted into the Speech/Audio Generator.
 First, the user’s sentence/prompt is broken down into smaller chunks called ‘tokens’, which are chunks of text encoded as a vector as in Figure 2. ChatGPT uses a transformer model to read every word in the sentence at once, and compares each word/token to the other by giving each word an “attention score” from 0 to 1.  Words with a similar attention score, typically correlate in some way. Attention mechanisms help the model focus on certain words and understand the holistic subject of the sentence, for example it would be able to understand the meaning of the word “bank” based off of the surrounding text, either like a ‘river bank’ or a ‘financial bank’. Once a full set of lyrics is generated, the model outputs the final sequence of tokens as text, which could then be passed onto a Speech/Vocal Generator to turn the text into audio.
   </p>
-   <img src="fig2.png" alt="Figure 2" style="width: 350px; height: 250px; align="left" >
+   <img src="fig2.png" alt="Figure 2" style="width: 350px; height: 250px; align="right" >
   <br>
       <h3 id="vocalgeneration"><b>Vocal Generation</b></h3>
   <p>

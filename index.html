@@ -110,13 +110,13 @@ h4 {
     <div style="text-align: right; margin-top: 10px; margin-bottom: 20px; float: right;">
     <img src="fig2.png" alt="Figure 2" style="width: 500px; height: 350px; float: right; margin-left: 20px; margin-bottom:20px; margin-top:10px"> 
     </div>
-  <p id=LyricalGeneration>
+  <p id="LyricalGeneration">
    Most of these AIs use their own custom built versions of Chat GPT. GPT is a Generative Pretrained Transformer model (Harry Guinness, 2024), which is a language model trained across the large database of the internet, and any other publicly available datasets or pieces of information. After analyzing several lyrics from the internet, Chat GPT would consider the grammar, semantics, context, style and genre and generate lyrics that would then be inputted into the Speech/Audio Generator.
 First, the user’s sentence/prompt is broken down into smaller chunks called ‘tokens’, which are chunks of text encoded as a vector as in Figure 2. ChatGPT uses a transformer model to read every word in the sentence at once, and compares each word/token to the other by giving each word an “attention score” from 0 to 1.  Words with a similar attention score, typically correlate in some way. Attention mechanisms help the model focus on certain words and understand the holistic subject of the sentence, for example it would be able to understand the meaning of the word “bank” based off of the surrounding text, either like a ‘river bank’ or a ‘financial bank’. Once a full set of lyrics is generated, the model outputs the final sequence of tokens as text, which could then be passed onto a Speech/Vocal Generator to turn the text into audio.
   </p>
   <br>
       <h3 id="vocalgeneration"><b>Vocal Generation</b></h3>
-  <p>
+  <p id="Voicecloningintro">
   Once the lyrics of the song are generated through a Large Language Model or similar, AI voice cloning is used to replicate the vocals of a chosen artist and a text-to-speech model would be used to bring those lyrics to life. AI Vocal generators use models similar to that of one called Tacotron 2 - a Text-to-Speech model that converts text into natural sounding speech, to generate vocals from a text input, so let’s break down how Tacotron 2 works. 
    <br> 
    <ol class="numbered-list">
@@ -210,10 +210,11 @@ Copyright law actually doesn’t directly protect a singer's voice, but rather t
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
     const IntroductionCount = displayWordCount("Introduction_InText");
-    const Introduction2Count = displayWordCount("LyricalGeneration");
+    const LyricalGenerationCount = displayWordCount("LyricalGeneration");
+    const VoicecloningintroCount = displayWordCount("LyricalGeneration");
    
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + Introduction2Count;
+    const totalWordCount = IntroductionCount + LyricalGenerationCount + VoicecloningintroCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }

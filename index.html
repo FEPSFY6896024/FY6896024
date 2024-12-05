@@ -111,18 +111,15 @@ h4 {
    Most of these AIs use their own custom built versions of Chat GPT. GPT is a Generative Pretrained Transformer model (Harry Guinness, 2024), which is a language model trained across the large database of the internet, and any other publicly available datasets or pieces of information. After analyzing several lyrics from the internet, Chat GPT would consider the grammar, semantics, context, style and genre and generate lyrics that would then be inputted into the Speech/Audio Generator.
 First, the user’s sentence/prompt is broken down into smaller chunks called ‘tokens’, which are chunks of text encoded as a vector as in Figure 2. ChatGPT uses a transformer model to read every word in the sentence at once, and compares each word/token to the other by giving each word an “attention score” from 0 to 1.  Words with a similar attention score, typically correlate in some way. Attention mechanisms help the model focus on certain words and understand the holistic subject of the sentence, for example it would be able to understand the meaning of the word “bank” based off of the surrounding text, either like a ‘river bank’ or a ‘financial bank’. Once a full set of lyrics is generated, the model outputs the final sequence of tokens as text, which could then be passed onto a Speech/Vocal Generator to turn the text into audio.
   </p>
-   <img src="fig4.png" alt="Figure 4" style="width: 400px; height: 200px; float: right; margin-left: 20px; margin-bottom:20px; margin-top:10px"> 
   <br>
       <h3 id="vocalgeneration"><b>Vocal Generation</b></h3>
-      <div style="text-align: right; margin-top: 10px; margin-bottom: 20px; float: right;">
-      <img src="fig3.png" alt="Figure 3" style="width: 300px; height: 250px; float: right; margin-left: 20px; margin-bottom:20px; margin-top:10px"> 
-     </div>
   <p>
   Once the lyrics of the song are generated through a Large Language Model or similar, AI voice cloning is used to replicate the vocals of a chosen artist and a text-to-speech model would be used to bring those lyrics to life. AI Vocal generators use models similar to that of one called Tacotron 2 - a Text-to-Speech model that converts text into natural sounding speech, to generate vocals from a text input, so let’s break down how Tacotron 2 works. 
    <br> 
    <ol class="numbered-list">
   <li><b>Text Processing - </b>Firstly, the text undergoes several stages of preprocessing to ensure that it is in a format that the model can actually handle. Tacotron cleans up the lyrical text input, removing any punctuation marks, turning number inputs like “123” into “one two three” and abbreviations like “Dr.” to “Doctor”.</li>
-  <li><b>Grapheme-to-Phoneme (G2P) Conversion - </b> 
+    <img src="fig4.png" alt="Figure 4" style="width: 400px; height: 200px; float: right; margin-left: 20px; margin-bottom:20px; margin-top:10px"> 
+    <li><b>Grapheme-to-Phoneme (G2P) Conversion - </b> 
 Text is usually written in “Graphemes” which are letters or characters like “cat”, “dog” and etc as seen in Figure 4. Speech is made up of “Phonemes”, which are the smallest units of sound in speech and are written as “/k/, /æ/, /t/”. Tacotron would then use a ‘Grapheme-to-Phoneme’ model to convert the words into their phonetic representation like this "cat" → /k/, /æ/, /t/.
 </li>
   <li><b>Encoding the text - </b>The phonemes would then be passed through an encoder which turns them into a list of numbers (vector) that summarises their tone, stress and rhythm.
@@ -134,6 +131,9 @@ Text is usually written in “Graphemes” which are letters or characters like 
   </p>
   <br>
       <h3 id="musicgenerating"><b>Generating the Music itself</b></h3>
+    <div style="text-align: right; margin-top: 10px; margin-bottom: 20px; float: right;">
+      <img src="fig3.png" alt="Figure 3" style="width: 300px; height: 250px; float: right; margin-left: 20px; margin-bottom:20px; margin-top:10px"> 
+     </div>
   <p>
 There are many platforms such as Mureka.ai and Suno.ai that can be used to generate songs from scratch, given some prompts on genre, topic, tempo and lyrics from the user. But how exactly do these platforms generate the soundtrack ? <br> Just like in generating the AI vocal and lyrics, music generating AIs start by scraping their data from publicly available datasets and online repositories and user contributed data. This includes audio files, MIDI files and ABC Notation. An example of such datasets is ‘MusicCaps’ which is a dataset containing 5,521 music samples of which is labeled with an English aspect list and a free text caption written by musicians. The instrument choice, tempo, meter and key are provided by the user. WaveNet uses convolutional neural networks  to make predictions influenced by all previously seen observations of the waveforms it has analysed and generates new waveforms that are iterations of the previous (Rachel Chen, 2017). 
   </p>

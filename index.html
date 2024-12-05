@@ -119,7 +119,7 @@ First, the user’s sentence/prompt is broken down into smaller chunks called �
   <p id="Voicecloningintro">
   Once the lyrics of the song are generated through a Large Language Model or similar, AI voice cloning is used to replicate the vocals of a chosen artist and a text-to-speech model would be used to bring those lyrics to life. AI Vocal generators use models similar to that of one called Tacotron 2 - a Text-to-Speech model that converts text into natural sounding speech, to generate vocals from a text input, so let’s break down how Tacotron 2 works. 
    <br> 
-   <ol class="numbered-list">
+   <ol class="numbered-list" id="Tacotron">
   <li><b>Text Processing - </b>Firstly, the text undergoes several stages of preprocessing to ensure that it is in a format that the model can actually handle. Tacotron cleans up the lyrical text input, removing any punctuation marks, turning number inputs like “123” into “one two three” and abbreviations like “Dr.” to “Doctor”.</li>
     <img src="fig4.png" alt="Figure 4" style="width: 400px; height: 200px; float: right; margin-left: 20px; margin-bottom:20px; margin-top:10px"> 
     <li><b>Grapheme-to-Phoneme (G2P) Conversion - </b> 
@@ -212,9 +212,11 @@ Copyright law actually doesn’t directly protect a singer's voice, but rather t
     const IntroductionCount = displayWordCount("Introduction_InText");
     const LyricalGenerationCount = displayWordCount("LyricalGeneration");
     const VoicecloningintroCount = displayWordCount("LyricalGeneration");
-   
+    const TacotronCount = displayWordCount("Tacotron");
+    const G2PConversionCount = displayWordCount("G2PConversion");
+    const G2PConversionCount = displayWordCount("G2PConversion");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + LyricalGenerationCount + VoicecloningintroCount;
+    const totalWordCount = IntroductionCount + LyricalGenerationCount + VoicecloningintroCount + TacotronCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
